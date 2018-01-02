@@ -1,0 +1,304 @@
+.section1{
+    background:url(../images/sec1_bg.jpg) no-repeat center 0 #212121;
+    @include padding(50px,0,50px,0);
+    .sec-heading{
+        position:relative;
+        color:$color-white;
+        text-transform:uppercase;
+        @include margin(0,0,15px,0);
+        &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            top:100%;
+            height:1px;
+            background-color:$color-white;
+            width:60px;
+            @include margin(14px,0,0,-30px);
+        }
+    }
+    .para-text{
+        color:$color-lightgrey;
+        @include margin(0,0,0,0);
+        @include padding(15px,10px,15px,10px);
+        @include rhythm(15px,24px);
+        font-weight:300;
+        strong{
+            color:$color-white;
+        }
+    }
+    @include responsive(small){
+        @include margin(-80px,0,0,0);
+        @include padding(50px,0,100px,0);
+    }
+}
+.section2{
+    @include padding(20px,0,20px,0);
+    background:url(../images/sec2_bg.jpg) no-repeat center 0 $color-black;
+    .sec-heading{
+        position:relative;
+        color:$color-white;
+        text-transform:uppercase;
+        @include margin(0,0,15px,0);
+        &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            top:100%;
+            height:1px;
+            background-color:$color-white;
+            width:60px;
+            @include margin(14px,0,0,-30px);
+        }
+    }
+    .para-text{
+        color:$color-lightgrey;
+        @include margin(0,0,0,0);
+        @include padding(15px,10px,15px,10px);
+        @include rhythm(15px,24px);
+        font-weight:300;
+        strong{
+            color:$color-white;
+        }
+    }
+    .sec2-img{
+        background:url(../images/sec2_img.png) no-repeat center 0;
+        background-size:180% auto;
+        height:350px;
+        @include margin(15px,0,15px,0);
+    }
+    @include responsive(small){
+        @include padding(50px,0,50px,0);
+        .sec2-img{
+            height:491px;
+            background-size:200% auto;
+        }
+    }
+    @include responsive(medium){
+        .sec2-img{
+            height:491px;
+            background-size:auto;
+        }
+        .para-text{
+            max-width:788px;
+            @include center-block;
+        }
+    }
+}
+.section3{
+    @include padding(20px,0,20px,0);
+    background-color:$color-black;
+    .cls-ft-cont{
+        h4{
+            color:$color-white;
+            @include margin(0,0,15px,0);
+            @include line-height(24px);
+        }
+        p{
+            color:$color-lightgrey;
+        }
+        .btn{
+            text-transform:uppercase;
+            @include padding(8px,20px,8px,20px);
+            @include transition(all,0.3s,ease-out);
+            .fa{
+                color:$color-skyblue;
+                @include margin(0,0,0,8px);
+                @include font-size(18px);
+            }
+            .btn__text{
+                z-index:4;
+                position:relative;
+            }
+            &:hover{
+                .btn__text{
+                    color:$color-white;
+                }
+            }
+        }
+    }
+    .ft-block{
+        .row{
+            @include padding(0px,0,30px,0);
+        }
+    }
+    @include responsive(small){
+        @include padding(50px,0,50px,0);
+        .cls-ft-cont{
+            @include padding(120px,0,0,0);
+        }
+    }
+}
+.section4{
+    background:url(../images/sec4_bg.jpg) no-repeat center 0;
+    @include padding(20px,0,20px,0);
+    .sec-heading{
+        position:relative;
+        color:$color-white;
+        text-transform:uppercase;
+        @include margin(0,0,15px,0);
+        &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            top:100%;
+            height:1px;
+            background-color:$color-white;
+            width:60px;
+            @include margin(14px,0,0,-30px);
+        }
+    }
+    .para-text{
+        color:$color-lightgrey;
+        @include margin(0,0,0,0);
+        @include padding(15px,10px,15px,10px);
+        @include rhythm(15px,24px);
+        font-weight:300;
+        strong{
+            color:$color-white;
+        }
+    }
+    .location-block{
+        @include margin(20px,0,0,0);
+    }
+    .location-img{
+        position:relative;
+        display:inline-block;
+    }
+    .location-details{
+        position:absolute;
+        top:250px;
+        right:0;
+        background:rgba(0,0,0,0.8);
+        @include border-radius(6px);
+        @include padding(20px,20px,20px,20px);
+        width:450px;
+        .logo-img{
+            display:inline-block;
+            vertical-align:top;
+            img{
+                width:75px;
+                opacity:0.3;
+            }
+        }
+        .location{
+            @extend .logo-img;
+            @include margin(0,0,0,18px);
+            h4{
+                color:$color-white;
+                @include margin(0,0,10px,0);
+            }
+            p{
+                color:#A6A6A6;
+                font-size:14px;
+            }
+        }
+        &:before{
+            @include css-arrow(rgba(0,0,0,0.8),10px,up);
+            content:"";
+            position:absolute;
+            top:-10px;
+            left:62%;
+        }
+    }
+    @include responsive(small){
+        @include padding(50px,0,50px,0);
+        .location-block{
+            @include margin(40px,0,0,0);
+        }
+    }
+    @include responsive(medium){
+        .location-img{
+            width:56%;
+        }
+        .location-details{
+            background:rgba(255,255,255,0.2);
+            left:90%;
+            top:150px;
+            &:before{
+                @include css-arrow(rgba(255,255,255,0.2),10px,left);
+                left:-10px;
+                top:auto;
+            }
+        }
+    }
+    @include responsive(large){
+        .location-details{
+            left:100%;
+        }
+    }
+    @include responsive(tabcustom){
+        .location-details{
+            width:100%;
+            top:auto;
+            bottom:0;
+            &:before{
+                right:20%;
+                left:auto;
+            }
+        }
+    }
+    @include responsive(mobile){
+        .location-img{
+            min-height:366px;
+        }
+        .location-details{
+            .logo-img{
+                display:block;
+                text-align:center;
+                @include margin(0,0,15px,0);
+            }
+            &:before{
+                right:20%;
+                left:auto;
+            }
+        }
+    }
+}
+.section5{
+    @include padding(10px,0,10px,0);
+    background:#FD5D2C;
+    @include two-color-gradient(right, #FD5D2C, #05B5D5);
+    .call-us{
+        color:$color-white;
+        text-align:center;
+        @include margin(0,0,8px,0);
+        h3{
+            @include margin(0,0,8px,0);
+        }
+        p{
+            @include margin(0,0,0,0);
+        }
+    }
+    .contact-no{
+        @include font-size(24px);
+        @include padding(14px,0,14px,0);
+        a{
+            color:$color-white;
+            &:hover{
+                text-decoration:none;
+            }
+        }
+    }
+    .callbtn{
+        @include padding(14px,0,14px,0);
+        text-align:center;
+        .btn{
+            @include padding(8px,20px,8px,20px);
+            @include transition(all,0.3s,ease-out);
+            color:$color-white;
+            &:hover{
+                background:$color-white;
+                color:$color-black;
+            }
+        }
+    }
+    @include responsive(small){
+        .callbtn{
+            text-align:right;
+        }
+        .call-us{
+            text-align:left;
+        }
+    }
+}

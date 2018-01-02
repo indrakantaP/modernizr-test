@@ -1,0 +1,53 @@
+footer{
+    background:$color-black;
+    @include two-color-gradient(bottom, #282828, $color-black);
+    @include padding(48px,0,50px,0);
+    .footer-logo {
+        @include padding(48px,0,48px,0);
+    }
+    .footer-nav{
+        li{
+            display:inline-block;
+            position:relative;
+            vertical-align:top;
+            @include margin(0,4px,0,4px);
+            @include font-size(13px);
+            font-weight:300;
+            color:$color-lightgrey;
+            &:after{
+                content:"|";
+                position: absolute;
+                right: -10px;
+                top: 0;
+            }
+            a{
+                @include padding(3px,2px,3px,2px);
+                color:$color-lightgrey;
+                @include transition(all,0.3s,ease-out);
+                &:hover{
+                    color:$color-orange;
+                    text-decoration:none;
+                }
+            }
+        }
+    }
+    .copyright{
+        @include padding(8px,0,8px,0);
+        color:$color-lightgrey;
+    }
+    .social-icon{
+        span{
+            display:inline-block;
+            vertical-align:top;
+            @include margin(0,6px,0,6px);
+        }
+        a{
+            color:$color-lightgrey;
+            @include font-size(18px);
+            &:hover{
+                color:$color-orange;
+                text-decoration:none;
+            }
+        }
+    }
+}

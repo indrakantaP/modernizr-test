@@ -1,0 +1,177 @@
+.header{
+    .navbar-collapse{
+        @include responsive(small){
+            float:right;
+        }
+    }
+}
+.header--fixed{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:6;
+}
+.banner{
+    background:url(../images/banner_bg.jpg) no-repeat center 0;
+    background-size:cover;
+    position: relative;
+    z-index:3;
+}
+.banner:after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:100%;
+    height:378px;
+}
+.cssgradients .banner:after{
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.51) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.51) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.51) 0%,rgba(0,0,0,0) 100%);
+}
+.no-cssgradients .banner:after{
+    background:url(../images/banner_gr.png) repeat-x left 0;
+}
+.navbar-header{
+    .navbar-brand{
+        height:auto;
+    }
+    .navbar-toggle{
+        .icon-bar{
+            background-color:$color-white;
+        }
+    }
+}
+.navbar{
+    height:auto;
+    .menu-right{
+        li{
+            @include padding(0, 15px, 0, 15px);
+            a{
+            color:$color-white;
+            @include rhythm(14px, 20px);
+            @include padding(15px, 0, 5px, 0);
+            border-bottom:1px solid $color-transparent;
+            &:hover{
+                background-color:$color-transparent;
+                border-color:$color-white;
+                }
+            }
+        }
+
+    }
+    .right-action{
+            position: absolute;
+            right: 80px;
+            top: 1px;
+        li{
+            @include inline-block;
+            a{
+                @include padding(15px,5px,5px,5px);
+                @include block-element;
+                color:$color-white;
+                @include rhythm(16px,1);
+                &:hover{
+                    color: $color-orange;
+                }
+            }
+            span{
+                @include inline-block;
+            }
+        }
+
+    }
+    .navbar-brand{
+        img{
+            width:90px;
+        }
+    }
+    @include responsive(small){
+        .menu-right{
+            @include padding(40px,0,0,0);
+        }
+        .navbar-brand{
+            padding:15px 15px 0 0;
+            img{
+                width:auto;
+            }
+        }
+        .right-action{
+            position:static;
+            float:right;
+            @include padding(40px,0,0,0);
+            @include margin(0, -15px, 0, 0);
+        }
+    }
+}
+.csstransitions .navbar .menu-right li a{
+    @include transition(all, 0.3s, ease-out);
+}
+.csstransitions .navbar .right-action li a{
+    @include transition(all, 0.3s, ease-out);
+}
+
+.banner{
+    &:after{
+
+    }
+    .banner-container{
+        position:relative;
+        .banner-img{
+            @include responsive(small){
+                @include margin(0,0,0,-74px);
+                img{
+                    width:80%;
+                }
+            }
+            @include responsive(medium){
+                @include margin(0,0,0,-94px);
+                img{
+                    width:80%;
+                }
+            }
+            @include responsive(large){
+                @include margin(0,0,0,-120px);
+                img{
+                    width:auto;
+                }
+            }
+        }
+        .banner-context{
+            text-align:center;
+            @include padding(0,0,30px,0);
+            @include rhythm(24px,30px);
+            h1{
+                color:$color-white;
+                text-transform:uppercase;
+                @include font-size(22px);
+            }
+            p{
+                color:$color-white;
+                @include rhythm(14px,20px);
+            }
+            @include responsive(small){
+                text-align:left;
+                position:absolute;
+                top:50%;
+                right:0px;
+                width:280px;
+                transform:translateY(-50%);
+                .btn{
+                    width:188px;
+                    height:50px;
+                    @include border-radius(40px);
+                    @include rhythm(18px,24px);
+                }
+                h1{
+                    @include font-size(30px);
+                }
+            }
+            @include responsive(medium){
+                width:320px;
+                right:60px;
+            }
+        }
+    }
+}

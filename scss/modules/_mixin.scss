@@ -1,0 +1,120 @@
+@mixin padding($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+@mixin font-size($sizeValue){
+	font-size:$sizeValue;
+}
+@mixin line-height($heightValue){
+	line-height:$heightValue;
+}
+@mixin rhythm($sizeValue, $heightValue) {
+	@include font-size($sizeValue);
+	@include line-height($heightValue);
+}
+@mixin block-element{
+	display:block;
+}
+@mixin center-block {
+  @include block-element;
+  margin:0 auto 0 auto;
+}
+@mixin inline-block{
+	display:inline-block;
+	vertical-align:top;
+}
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+-ms-border-radius: $radius;
+border-radius: $radius;
+}
+@mixin transition($what, $time, $how) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+@mixin btn-white {
+   background-color: $color-white;
+   border-color: $color-white;
+   color:$color-black;
+   @include transition(all, 0.3s, ease-out);
+   &:hover {
+      background-color: #e0e0e0;
+   }
+   &:active, &:focus {
+      background-color: #e0e0e0;
+      outline:none;
+   }
+}
+@mixin btn-black {
+   background-color: $color-black;
+   border-color: $color-lightgrey;
+   color:$color-lightgrey;
+   @include transition(all, 0.3s, ease-out);
+   &:hover {
+      background-color: $color-white;
+      color:$color-black;
+   }
+   &:active, &:focus {
+      background-color: $color-white;
+      color:$color-black;
+      outline:none;
+   }
+}
+@mixin two-color-gradient($position,$color1,$color2){
+    background: -webkit-linear-gradient($position, $color1 , $color2);
+    background: -o-linear-gradient($position, $color1 , $color2);
+    background: -moz-linear-gradient($position, $color1 , $color2);
+    background: linear-gradient(to $position, $color1 , $color2);
+}
+@mixin css-arrow($color, $size, $direction){
+  width: 0;
+  height: 0 ;
+  
+  @if $direction == 'up' {
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-top: 0px solid $color;
+}
+  @if $direction == 'down' {
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    border-top: $size solid $color;
+    border-bottom: 0px solid $color;
+}
+  @if $direction == 'right'{
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    border-right: 0px solid $color;
+}
+  @if $direction == 'left'{
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    border-left: 0px solid $color;
+  }
+}
+@mixin responsive($breakpoints){
+	@if $breakpoints == large{
+		@media (min-width: 1200px) { @content; }
+	}
+	@if $breakpoints == medium{
+		@media (min-width: 992px) { @content; }
+	}
+	@if $breakpoints == small{
+		@media (min-width: 768px) { @content; }
+	}
+  @if $breakpoints == tabcustom{
+    @media (max-width: 639px) { @content; }
+  }
+  @if $breakpoints == mobile{
+    @media (max-width: 479px) { @content; }
+  }
+}
